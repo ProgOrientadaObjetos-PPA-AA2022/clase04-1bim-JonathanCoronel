@@ -6,27 +6,37 @@
 package manejoclases03;
 
 public class Ejecutable {
+
     public static void main(String[] args) {
         // Se crea un objeto
-        Computadora computadoraPersonal = new Computadora();
-        
+        Computadora computadoraPersonal = new Computadora(8);
+        computadoraPersonal.establecerTipoProcesador("Intel");
+        Computadora computadoraPersona2 = new Computadora("AMD");
+        computadoraPersona2.establecerMemoria(16);
+        Computadora computadoraPersona3 = new Computadora("AMD", 32);
+
         // Se asigna valores particulares al objeto
         // a través de los métodos establecer
-        
-        String procesador = "Intel";
-        double memoria = 8.2; // se asume que está expresada en GB
-        computadoraPersonal.establecerTipoProcesador(procesador);
-        computadoraPersonal.establecerMemoria(memoria);
-        
         // Se presenta valores en pantalla, rescatando los valores
         // que se necesita a través de los métodos obtener del
         // objeto 
-        
         System.out.printf("Computadora\n"
                 + "Procesador: %s\n"
-                + "Memoria: %.2f GB\n", 
+                + "Memoria: %.2f GB\n\n",
                 computadoraPersonal.obtenerTipoProcesador(),
                 computadoraPersonal.obtenerMemoria());
-        
+
+        System.out.printf("Computadora\n"
+                + "Procesador: %s\n"
+                + "Memoria: %.2f GB\n\n",
+                computadoraPersona2.obtenerTipoProcesador(),
+                computadoraPersona2.obtenerMemoria());
+
+        System.out.printf("Computadora\n"
+                + "Procesador: %s\n"
+                + "Memoria: %.2f GB\n",
+                computadoraPersona3.obtenerTipoProcesador(),
+                computadoraPersona3.obtenerMemoria());
+
     }
 }
